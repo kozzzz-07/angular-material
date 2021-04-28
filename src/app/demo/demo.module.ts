@@ -6,6 +6,7 @@ import { ButtonsComponent } from './buttons/buttons.component';
 import { MaterialModule } from '../shared/material.module';
 import { FormsModule } from '@angular/forms';
 import { FlexboxComponent } from './flexbox/flexbox.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FlexboxComponent } from './flexbox/flexbox.component';
     CommonModule,
     DemoRoutingModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    FlexLayoutModule
   ]
 })
 export class DemoModule { }
