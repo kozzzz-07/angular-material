@@ -1,5 +1,6 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDrawer } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 
@@ -19,6 +20,8 @@ export class SidenavComponent implements OnInit {
     private router: Router
     ) { }
 
+  @ViewChild(MatDrawer)matDrawer!: MatDrawer;
+
   ngOnInit(): void {
     this.breakPointObserver
       // .observe([Breakpoints.XSmall]);
@@ -32,6 +35,12 @@ export class SidenavComponent implements OnInit {
       if (data.length) {
         // リロードしたタイミングでデータが流れた際、取得した初期idへの自動ナビゲート
         this.router.navigate(['/contactmanager', data[0].id]);
+      }
+    });
+
+    this.router.events.subscribe(() => {
+      if (this.isScreenSmall) {
+        this.matDrawer.close();
       }
     });
   }
