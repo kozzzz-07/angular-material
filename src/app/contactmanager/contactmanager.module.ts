@@ -5,7 +5,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 import { MainContentComponent } from './components/main-content/main-content.component';
 import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { MaterialModule } from '../shared/material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ContactmanagerRoutingModule } from './contactmanager-routing.module';
 import { HttpClientModule } from '@angular/common/http';
@@ -30,6 +30,7 @@ import { NewContactDialogComponent } from './components/new-contact-dialog/new-c
     ContactmanagerRoutingModule,
     MaterialModule,
     FormsModule,
+    ReactiveFormsModule,
     FlexLayoutModule
   ],
   providers: [
