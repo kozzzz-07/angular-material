@@ -10,6 +10,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { ContactmanagerRoutingModule } from './contactmanager-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
+import { NotesComponent } from './components/notes/notes.component';
 
 
 
@@ -18,7 +19,8 @@ import { UserService } from './services/user.service';
     ContactmanagerAppComponent,
     ToolbarComponent,
     MainContentComponent,
-    SidenavComponent
+    SidenavComponent,
+    NotesComponent
   ],
   imports: [
     CommonModule,
