@@ -1,0 +1,8 @@
+.examole-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.examole-container > * {
+  width: 100%;
+}

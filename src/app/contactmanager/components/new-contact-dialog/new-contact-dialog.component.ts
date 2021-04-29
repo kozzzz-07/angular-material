@@ -12,4 +12,12 @@ export class NewContactDialogComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  save(): void {
+
+  }
+
+  dismiss(): void {
+    
+  }
+
 }
