@@ -8,6 +8,8 @@ import { MaterialModule } from '../shared/material.module';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ContactmanagerRoutingModule } from './contactmanager-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { UserService } from './services/user.service';
 
 
 
@@ -20,10 +22,14 @@ import { ContactmanagerRoutingModule } from './contactmanager-routing.module';
   ],
   imports: [
     CommonModule,
+    HttpClientModule,
     ContactmanagerRoutingModule,
     MaterialModule,
     FormsModule,
     FlexLayoutModule
+  ],
+  providers: [
+    UserService
   ]
 })
 export class ContactmanagerModule { }
