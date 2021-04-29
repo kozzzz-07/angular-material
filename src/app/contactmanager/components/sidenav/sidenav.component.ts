@@ -1,5 +1,6 @@
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { UserService } from '../../services/user.service';
 
 const SMALL_WIDTH_BREAKPOINT = 720;
@@ -14,7 +15,8 @@ export class SidenavComponent implements OnInit {
 
   constructor(
     private breakPointObserver: BreakpointObserver,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
     ) { }
 
   ngOnInit(): void {
@@ -26,7 +28,12 @@ export class SidenavComponent implements OnInit {
       });
 
     this.userService.loadAll();
-    this.users$.subscribe(data => console.log(data));
+    this.users$.subscribe(data => {
+      if (data.length) {
+        // リロードしたタイミングでデータが流れた際、取得した初期idへの自動ナビゲート
+        this.router.navigate(['/contactmanager', data[0].id]);
+      }
+    });
   }
 
 }
