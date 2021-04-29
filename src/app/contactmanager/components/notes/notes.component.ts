@@ -29,4 +29,9 @@ export class NotesComponent implements OnInit, AfterViewInit {
     this.dataSource = new MatTableDataSource<Note>(this.notes);
   }
 
+  applyFilter(event: Event): void {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+
 }
